@@ -5,6 +5,9 @@ This is your first repository
 
 ## 📌 Overview
 
+
+
+
 **BucketBuddies** is a social platform that empowers users to create, manage, and complete personalized bucket lists while connecting with like-minded people. Whether it's skydiving, learning a new language, or painting a masterpiece—BucketBuddies makes achieving life goals fun, social, and motivating.
 
 ---
