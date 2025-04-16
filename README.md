@@ -148,3 +148,6 @@ This is your first repository
 **BucketBuddies** isn't just a goal tracker—it's a community for dreamers and achievers. It encourages users to live more intentionally, collaborate with friends, and celebrate progress. This project combines full-stack development, engaging UI, and social features to create a meaningful and inspiring platform.
 
 Let’s build dreams, one goal at a time 🚀
+
+## Backend Deployment ##
+https://s63-divya-capstone-bucketbuddies.onrender.com
