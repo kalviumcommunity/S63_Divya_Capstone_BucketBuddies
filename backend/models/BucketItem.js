@@ -31,7 +31,13 @@ const bucketItemSchema = new mongoose.Schema(
     category: {
       type: String,
       trim: true
-    }
+    },
+    tags: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Tag"
+      }
+    ]
   },
   { timestamps: true }
 );
