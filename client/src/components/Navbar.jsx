@@ -1,59 +1,69 @@
-import React from "react";
-import { motion } from "framer-motion";
-import "../styles/Navbar.css";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/Navbar.css';
 
-const menuItems = [
-  { name: "HOME", href: "#home", animateUnderline: true },
-  { name: "FEATURES", href: "#features", animateUnderline: true },
-  { name: "EXPLORE", href: "#explore", animateUnderline: true },
-  { name: "GET STARTED", href: "#get-started", animateUnderline: false },
-];
+const Navbar = () => {
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-function Navbar() {
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') {
+      // If we're scrolling down, hide the navbar
+      if (window.scrollY > lastScrollY) {
+        setShow(false);
+      } else {
+        // If we're scrolling up, show the navbar
+        setShow(true);
+      }
+      // Update last scroll position
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar);
+
+      // Cleanup function
+      return () => {
+        window.removeEventListener('scroll', controlNavbar);
+      };
+    }
+  }, [lastScrollY]);
+
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
+    <nav className={`navbar ${show ? 'navbar-show' : 'navbar-hide'}`}>
       <div className="navbar-logo">
-        <span className="bucket" aria-label="Bucket">BUCKET</span>
-        <span className="buddies" aria-label="Buddies">BUDDIES</span>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <div className="bucket">BUCKET</div>
+          <div className="buddies">BUDDIES</div>
+        </Link>
       </div>
+      
       <ul className="navbar-links">
-        {menuItems.map(({ name, href, animateUnderline }) => (
-          <li key={name}>
-            {animateUnderline ? (
-              <motion.a
-                href={href}
-                tabIndex="0"
-                style={{ position: "relative", display: "inline-block" }}
-                initial="rest"
-                whileHover="hover"
-                animate="rest"
-              >
-                {name}
-                <motion.span
-                  variants={{
-                    rest: { width: 0 },
-                    hover: { width: "100%" },
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  style={{
-                    position: "absolute",
-                    bottom: 0,
-                    left: 0,
-                    height: 2,
-                    backgroundColor: "#a12c38",
-                    borderRadius: 1,
-                    pointerEvents: "none",
-                  }}
-                />
-              </motion.a>
-            ) : (
-              <a href={href} tabIndex="0">{name}</a>
-            )}
-          </li>
-        ))}
+        <li>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/features" style={{ textDecoration: 'none', color: 'inherit' }}>
+            Features
+          </Link>
+        </li>
+        <li>
+          <Link to="/explore" style={{ textDecoration: 'none', color: 'inherit' }}>
+            Explore
+          </Link>
+        </li>
+        <li>
+          <Link to="/get-started" className="get-started" style={{ textDecoration: 'none' }}>
+            Get Started
+          </Link>
+        </li>
       </ul>
     </nav>
   );
-}
+};
 
 export default Navbar;

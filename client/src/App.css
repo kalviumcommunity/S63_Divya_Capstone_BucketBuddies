@@ -8,6 +8,21 @@
   padding: 40px 60px 30px 60px;
   box-sizing: border-box;
   min-height: 140px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.navbar-show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navbar-hide {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 
 .navbar-logo {
@@ -93,5 +108,54 @@
   .navbar-links {
     gap: 15px;
     font-size: 1rem;
+  }
+}
+
+/* App Container */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  padding-top: 140px; /* Height of the navbar */
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS Variables */
+:root {
+  --primary-color: #514bff;
+  --text-color: #4d0000;
+  --background-color: #e5dbcf;
+  --white: #FFFFFF;
+}
+
+/* Basic Typography */
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  line-height: 1.6;
+  color: #231f20;
+  background-color: #e5dbcf;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding-top: 60px;
   }
 }

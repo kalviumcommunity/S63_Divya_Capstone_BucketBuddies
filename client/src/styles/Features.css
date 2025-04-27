@@ -1,0 +1,215 @@
+.features-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg,#e5dbcf 0%, #e5dbcf 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.features-hero {
+  text-align: center;
+  padding: 6rem 0 4rem;
+  background: linear-gradient(135deg, #e5dbcf 0%, #e5dbcf 100%);
+}
+
+.features-title {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.features-subtitle {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #4d0000;
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 5%;
+  flex: 1;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  filter: none;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+.feature-title {
+  font-family: 'Candal', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #514bff;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.feature-description {
+  font-family: 'Farsan', cursive;
+  font-size: 1.4rem;
+  color: #4d0000;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.features-cta {
+  text-align: center;
+  padding: 4rem 0;
+  margin-top: 2rem;
+}
+
+.cta-title {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 1rem;
+}
+
+.cta-subtitle {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #4d0000;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #514bff;
+  border: 2px solid #514bff;
+  border-radius: 30px;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  background-color: transparent;
+  color: #514bff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-hero {
+    padding: 5rem 0 3rem;
+  }
+
+  .features-title {
+    font-size: 3rem;
+  }
+
+  .features-subtitle {
+    font-size: 1.2rem;
+    padding: 0 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 5%;
+  }
+
+  .feature-card {
+    padding: 2rem;
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+  }
+
+  .feature-title {
+    font-size: 1.3rem;
+  }
+
+  .feature-description {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-hero {
+    padding: 4rem 0 2rem;
+  }
+
+  .features-title {
+    font-size: 2.5rem;
+  }
+
+  .features-subtitle {
+    font-size: 1.1rem;
+    padding: 0 1.5rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .feature-icon {
+    font-size: 2.8rem;
+  }
+
+  .feature-title {
+    font-size: 1.2rem;
+  }
+
+  .feature-description {
+    font-size: 1.1rem;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
