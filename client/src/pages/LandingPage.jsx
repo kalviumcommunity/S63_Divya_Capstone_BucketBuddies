@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import '../styles/landingPage.css';
+import '../styles/LandingPage.css';
 import Footer from '../components/Footer';
 
 const LandingPage = () => {
