@@ -153,4 +153,4 @@ Let’s build dreams, one goal at a time
 https://s63-divya-capstone-bucketbuddies.onrender.com 
 
 ## Frontend Deployment ## 
-https://bucketbuds.netlify.app/
+https://bucketkbuds.netlify.app/
