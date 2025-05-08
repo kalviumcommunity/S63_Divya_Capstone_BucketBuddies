@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import '../styles/Explore.css';
-import Footer from '../components/Footer';
 
 const categories = [
   {
@@ -91,8 +90,6 @@ const Explore = () => {
           </motion.section>
         ))}
       </div>
-
-      <Footer />
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/LandingPage.css';
-import Footer from '../components/Footer';
 
 const LandingPage = () => {
   const letters = "bucket   list!".split("");
@@ -205,8 +204,6 @@ const LandingPage = () => {
           </motion.h3>
         </div>
       </motion.section>
-
-      <Footer />
     </div>
   );
 };

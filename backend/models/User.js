@@ -1,3 +1,4 @@
+
 //models/User.js
 
 import mongoose from 'mongoose';
@@ -5,33 +6,32 @@ import mongoose from 'mongoose';
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, 'Name is required'],
+    required: true
   },
   email: {
     type: String,
-    required: [true, 'Email is required'],
-    unique: true,
-    match: [
-      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-      'Please enter a valid email address',
-    ],
+    required: true,
+    unique: true
   },
   password: {
     type: String,
-    required: [true, 'Password is required'],
-    minlength: [6, 'Password must be at least 6 characters'],
+    required: function() {
+      return !this.googleId; // Password is required only if not using Google auth
+    }
   },
-  profilePic: {
+  googleId: {
     type: String,
-    default: '', // Optional field for profile pic URL
+    unique: true,
+    sparse: true
   },
-}, {
-  timestamps: true, // adds createdAt and updatedAt
+  profilePicture: {
+    type: String
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
-
-
-
-const User = mongoose.model('User', userSchema);
-export default User;
+export default mongoose.model('User', userSchema);
 
