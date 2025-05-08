@@ -57,7 +57,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/get-started" className="get-started" style={{ textDecoration: 'none' }}>
+          <Link to="/signup" className="get-started" style={{ textDecoration: 'none' }}>
             Get Started
           </Link>
         </li>

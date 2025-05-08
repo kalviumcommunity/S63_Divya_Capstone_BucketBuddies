@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const bucketItemSchema = new mongoose.Schema(
   {
@@ -42,4 +42,4 @@ const bucketItemSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("BucketItem", bucketItemSchema);
+export default mongoose.model("BucketItem", bucketItemSchema);

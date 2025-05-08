@@ -1,0 +1,152 @@
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url('/images/back Sign.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;  
+}
+
+.signup-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.signup-form-container {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
+}
+
+.signup-form-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-size: 1.8rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ff03dd;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.signup-modern-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: #e0e0e0;
+  color: #222;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem 1.8rem 0.7rem 1.3rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  cursor: pointer;
+  transition: background 0.5s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.signup-modern-button:active {
+  background: #d5d5d5;
+}
+
+.signup-btn-text {
+  z-index: 2;
+  transition: color 0.3s;
+}
+
+.signup-btn-arrow {
+  display: flex;
+  align-items: center;
+  transform: translateX(-12px);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(.4,2,.6,1), opacity 0.3s;
+  z-index: 2;
+}
+
+.signup-modern-button:hover .signup-btn-arrow,
+.signup-modern-button:focus .signup-btn-arrow {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.signup-modern-button:hover .signup-btn-text,
+.signup-modern-button:focus .signup-btn-text {
+  color: #111;
+}
+
+/* Hide the old signup button if still present */
+.signup-button {
+  display: none;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.login-link a {
+  color: #f037d4;
+  text-decoration: none;
+  font-weight: 800;
+  transition: all 0.5s ease;
+}
+
+.login-link a:hover {
+  color: #f6f0f0;
+  text-decoration: underline;
+}
+
+

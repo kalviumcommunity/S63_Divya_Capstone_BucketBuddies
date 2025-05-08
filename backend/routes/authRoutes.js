@@ -1,14 +1,17 @@
 //routes/authRoutes.js
 
 import express from 'express';
-import { registerUser } from '../controllers/authController.js';
+import { signup, login, googleAuth } from '../controllers/authController.js';
 
 const router = express.Router();
 
-// POST /api/auth/register
-router.post('/register', registerUser);
+// Regular signup route
+router.post('/signup', signup);
 
+// Login route
+router.post('/login', login);
 
-
+// Google authentication route
+router.post('/google', googleAuth);
 
 export default router;

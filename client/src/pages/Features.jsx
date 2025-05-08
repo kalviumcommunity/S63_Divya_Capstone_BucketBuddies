@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import '../styles/Features.css';
-import Footer from '../components/Footer';
 
 const Features = () => {
   return (
@@ -100,8 +99,6 @@ const Features = () => {
           </p>
         </motion.div>
       </motion.div>
-
-      <Footer />
     </div>
   );
 };
