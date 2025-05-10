@@ -3,6 +3,7 @@
 import User from '../models/User.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
+import oauth2Client from '../config/googleConfig.js';
 
 // Regular signup
 export const signup = async (req, res) => {
@@ -49,10 +50,19 @@ export const signup = async (req, res) => {
   }
 };
 
-// Google authentication callback
+// Google authentication
 export const googleAuth = async (req, res) => {
   try {
-    const { name, email, googleId, profilePicture } = req.body;
+    const { token } = req.body;
+    
+    // Verify the token
+    const ticket = await oauth2Client.verifyIdToken({
+      idToken: token,
+      audience: process.env.GOOGLE_CLIENT_ID
+    });
+
+    const payload = ticket.getPayload();
+    const { email, name, picture, sub: googleId } = payload;
 
     // Check if user exists
     let user = await User.findOne({ email });
@@ -63,20 +73,20 @@ export const googleAuth = async (req, res) => {
         name,
         email,
         googleId,
-        profilePicture
+        profilePicture: picture
       });
       await user.save();
     }
 
     // Generate JWT token
-    const token = jwt.sign(
+    const jwtToken = jwt.sign(
       { userId: user._id },
       process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
 
     res.status(200).json({
-      token,
+      token: jwtToken,
       user: {
         id: user._id,
         name: user.name,

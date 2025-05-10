@@ -1,0 +1,19 @@
+.google-signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+/* Custom styles for the Google Sign-In button */
+.g_id_signin {
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Ensure the button is responsive */
+@media (max-width: 480px) {
+  .g_id_signin {
+    max-width: 100%;
+  }
+} 
