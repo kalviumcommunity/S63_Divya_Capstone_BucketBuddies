@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import GoogleSignIn from './GoogleSignIn';
-import '../styles/SignUp.css';
+import '../styles/Signup.css';
 
 const SignUp = () => {
   const navigate = useNavigate();
