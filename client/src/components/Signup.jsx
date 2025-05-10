@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import GoogleSignIn from './GoogleSignIn';
 import '../styles/SignUp.css';
 
 const SignUp = () => {
@@ -78,8 +79,8 @@ const SignUp = () => {
               minLength="6"
             />
           </div>
-          <button type="submit" className="signup-modern-button">
-            <span className="signup-btn-text">CREATE ACCOUNT</span>
+          <button type="submit" className="signup-modern-button" disabled={loading}>
+            <span className="signup-btn-text">{loading ? 'Creating Account...' : 'CREATE ACCOUNT'}</span>
             <span className="signup-btn-arrow">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="12" r="11" stroke="#222" strokeWidth="2" fill="none"/>
@@ -88,6 +89,10 @@ const SignUp = () => {
             </span>
           </button>
         </form>
+        <div className="divider">
+          <span>or</span>
+        </div>
+        <GoogleSignIn />
         <p className="login-link">
           Already have an account? <Link to="/login">Login</Link>
         </p>
