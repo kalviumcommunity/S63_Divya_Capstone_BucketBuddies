@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import LandingPage from './pages/LandingPage';
 import Features from './pages/Features';
 import Explore from './pages/Explore';
-import SignUp from './components/SignUp';
+import SignUp from './components/Signup';
 import Login from './components/Login';
 import ForgetPass from './components/ForgetPass';
 import Dashboard from './pages/Dashboard';
